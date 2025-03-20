@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.generation.fitness.model.Produto;
+import com.generation.fitness.repository.NivelRepository;
 import com.generation.fitness.repository.ProdutoRepository;
 
 import jakarta.validation.Valid;
