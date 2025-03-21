@@ -34,12 +34,10 @@ public class UsuarioService {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
-	public Usuario cadastrarUsuario(Usuario usuario) {
+	public Optional<Usuario> cadastrarUsuario(Usuario usuario) {
 
-		Optional<Usuario> optUsuario = usuarioRepository.findByUsuario(usuario.getUsuario());
-		if (optUsuario.isPresent())
-			return optUsuario.get();
-
+		if (usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
+            return Optional.empty();
 		Optional<Produto> optProduto = produtoRepository.findById(usuario.getProduto().getId());
 
 		if (optProduto.isEmpty()) {
@@ -63,7 +61,7 @@ public class UsuarioService {
 
 		usuario.setTempoEstimado(dataFinal);
 
-		return usuarioRepository.save(usuario);
+		return Optional.ofNullable(usuarioRepository.save(usuario));
 	}
 
 	public Optional<Usuario> atualizarUsuario(Usuario usuario) {
