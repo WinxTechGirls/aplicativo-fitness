@@ -60,7 +60,7 @@ public class JwtService {
 					.setClaims(claims)
 					.setSubject(userName)
 					.setIssuedAt(new Date(System.currentTimeMillis()))
-					.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60))
+					.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
 					.signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
 		/*
 		 * data atual + 100 *60 *60 = 1h - vai depender do tempo que você quer que dure o token
