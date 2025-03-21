@@ -1,5 +1,7 @@
 package com.generation.fitness.model;
 
+import java.time.LocalDateTime;
+
 public class UsuarioLogin {
 	
 	private Long id;
@@ -8,7 +10,8 @@ public class UsuarioLogin {
 	private String senha;
 	private String foto;
 	private String token;
-	
+	private LocalDateTime inicio;
+	private LocalDateTime tempoEstimado;
 	
 	public Long getId() {
 		return id;
@@ -46,7 +49,18 @@ public class UsuarioLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	
+	public LocalDateTime getInicio() {
+		return inicio;
+	}
+	public void setInicio(LocalDateTime inicio) {
+		this.inicio = inicio;
+	}
+	public LocalDateTime getTempoEstimado() {
+		return tempoEstimado;
+	}
+	public void setTempoEstimado(LocalDateTime tempoEstimado) {
+		this.tempoEstimado = tempoEstimado;
+	}
 	
 
 }

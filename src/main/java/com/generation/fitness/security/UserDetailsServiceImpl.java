@@ -10,8 +10,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.example.blogpessoal.model.Usuario;
-import com.example.blogpessoal.repository.UsuarioRepository;
+import com.generation.fitness.model.Usuario;
+import com.generation.fitness.repository.UsuarioRepository;
+
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
