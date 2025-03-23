@@ -1,5 +1,6 @@
 package com.generation.fitness.model;
 
+
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -35,6 +36,7 @@ public class Usuario {
 	private String senha;
 
 	private String foto;
+
 
 	private LocalDateTime inicio;
 
