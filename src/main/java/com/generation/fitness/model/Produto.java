@@ -1,12 +1,8 @@
 package com.generation.fitness.model;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
-import org.hibernate.annotations.UpdateTimestamp;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.generation.fitness.model.Usuario;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -36,11 +32,6 @@ public class Produto {
 	@NotBlank(message = "O atributo tipo de assinatura é obrigatório")
 	@Size(min = 5, max = 1000, message = "O o tipo de assinatura tem que ser maior que 5 e menor que 1000")
 	private String tipoAssinatura;
-	
-	@UpdateTimestamp
-	private LocalDateTime inicio;
-	
-	private LocalDateTime tempoEstimado;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
@@ -72,22 +63,6 @@ public class Produto {
 
 	public void setTipoAssinatura(String tipoAssinatura) {
 		this.tipoAssinatura = tipoAssinatura;
-	}
-
-	public LocalDateTime getInicio() {
-		return inicio;
-	}
-
-	public void setInicio(LocalDateTime inicio) {
-		this.inicio = inicio;
-	}
-
-	public LocalDateTime getTempoEstimado() {
-		return tempoEstimado;
-	}
-
-	public void setTempoEstimado(LocalDateTime tempoEstimado) {
-		this.tempoEstimado = tempoEstimado;
 	}
 
 	public Nivel getNivel() {
