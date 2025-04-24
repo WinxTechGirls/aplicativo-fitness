@@ -1,14 +1,15 @@
 package com.generation.fitness.model;
 
+
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -36,9 +37,30 @@ public class Usuario {
 
 	private String foto;
 
+
+	private LocalDateTime inicio;
+
+	private LocalDateTime tempoEstimado;
+
 	@ManyToOne
 	@JsonIgnoreProperties("usuario")
 	private Produto produto;
+
+	public LocalDateTime getInicio() {
+		return inicio;
+	}
+
+	public void setInicio(LocalDateTime inicio) {
+		this.inicio = inicio;
+	}
+
+	public LocalDateTime getTempoEstimado() {
+		return tempoEstimado;
+	}
+
+	public void setTempoEstimado(LocalDateTime tempoEstimado) {
+		this.tempoEstimado = tempoEstimado;
+	}
 
 	public Produto getProduto() {
 		return produto;
