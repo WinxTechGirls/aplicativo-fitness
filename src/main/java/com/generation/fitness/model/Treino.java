@@ -18,19 +18,19 @@ import jakarta.validation.constraints.Size;
 
 
 @Entity
-@Table(name = "tb_produtos")
-public class Produto {
+@Table(name = "tb_treinos")
+public class Treino {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotBlank(message = "O atributo nome é obrigatório")
-	@Size(min = 5, max = 100, message = "O nome tem que ser maior que 5 e menor que 100")
+	@Size(min = 5, max = 100, message = "O nome tem que ter pelo menos 5 caracteres e menos que 100")
 	private String nome;
 	
 	@NotBlank(message = "O atributo descrição é obrigatório")
-	@Size(min = 5, max = 1000, message = "A descrição tem que ser maior que 5 e menor que 1000")
+	@Size(min = 5, max = 1000, message = "A descrição tem que ter pelo menos 5 caracteres e menos que 1000")
 	private String descricao;
 	
 	@Size(max = 5000)
@@ -39,11 +39,11 @@ public class Produto {
 	private int duracao;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("produto")
+	@JsonIgnoreProperties("treino")
 	private Nivel nivel;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("produto")
+	@JsonIgnoreProperties("treino")
 	private Usuario usuario;
 	
 	public Long getId() {

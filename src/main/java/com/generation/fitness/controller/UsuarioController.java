@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.generation.fitness.model.UsuarioLogin;
 import com.generation.fitness.model.Usuario;
 import com.generation.fitness.repository.UsuarioRepository;
 import com.generation.fitness.service.UsuarioService;
@@ -48,7 +46,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/logar")
-	public ResponseEntity<UsuarioLogin> autenticarUsuario(@RequestBody Optional<UsuarioLogin> usuarioLogin){
+	public ResponseEntity<Usuario> autenticarUsuario(@RequestBody Optional<Usuario> usuarioLogin){
 		
 		return usuarioService.autenticarUsuario(usuarioLogin)
 				.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))

@@ -12,10 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.generation.fitness.model.UsuarioLogin;
-import com.generation.fitness.model.Produto;
 import com.generation.fitness.model.Usuario;
-import com.generation.fitness.repository.ProdutoRepository;
+import com.generation.fitness.model.Treino;
+import com.generation.fitness.model.Usuario;
+import com.generation.fitness.repository.TreinoRepository;
 import com.generation.fitness.repository.UsuarioRepository;
 import com.generation.fitness.security.JwtService;
 
@@ -26,11 +26,12 @@ public class UsuarioService {
 	private UsuarioRepository usuarioRepository;
 
 	@Autowired
-	private ProdutoRepository produtoRepository;
+	private TreinoRepository treinoRepository;
 
 	@Autowired
 	private JwtService jwtService;
 
+	
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
@@ -63,7 +64,7 @@ public class UsuarioService {
 
 	}
 
-	public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) {
+	public Optional<Usuario> autenticarUsuario(Optional<Usuario> usuarioLogin) {
 
 		var credenciais = new UsernamePasswordAuthenticationToken(usuarioLogin.get().getUsuario(),
 				usuarioLogin.get().getSenha());
