@@ -25,7 +25,7 @@ import com.generation.fitness.repository.TreinoRepository;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/treinos")
 @CrossOrigin(allowedHeaders = "*", origins = "*")
 public class TreinoController {
 	
@@ -83,10 +83,10 @@ public class TreinoController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
-		Optional<Treino> produto = treinoRepository.findById(id);
+		Optional<Treino> treino = treinoRepository.findById(id);
 		
 		
-		if(produto.isEmpty())
+		if(treino.isEmpty())
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		
 		treinoRepository.deleteById(id);

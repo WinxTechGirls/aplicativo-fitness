@@ -49,12 +49,12 @@ public class Nivel {
     }
 
 
-    public List<Treino> getProduto() {
+    public List<Treino> getTreino() {
         return treino;
     }
 
 
-    public void setProduto(List<Treino> produto) {
+    public void setTreino(List<Treino> treino) {
         this.treino = treino;
     } 
 
