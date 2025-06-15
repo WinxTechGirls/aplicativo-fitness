@@ -27,7 +27,7 @@ public class Nivel {
 
     @OneToMany(fetch = FetchType.LAZY , mappedBy = "nivel" , cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("nivel")
-    private List<Produto> produto;
+    private List<Treino> treino;
 
     public Long getId() {
         return id;
@@ -49,13 +49,13 @@ public class Nivel {
     }
 
 
-    public List<Produto> getProduto() {
-        return produto;
+    public List<Treino> getTreino() {
+        return treino;
     }
 
 
-    public void setProduto(List<Produto> produto) {
-        this.produto = produto;
+    public void setTreino(List<Treino> treino) {
+        this.treino = treino;
     } 
 
 
